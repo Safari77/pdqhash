@@ -1,24 +1,26 @@
 [package]
 name = "pdqhash"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2018"
 license = "Apache-2.0"
 readme = "README.md"
-license-file = "LICENSE"
 keywords = ["image", "pdq", "fuzzy", "hash"]
-repository = "https://github.com/darwinium-com/pdqhash"
+repository = "https://github.com/Safari77/pdqhash"
 description = "Perceptual Hashing, originally designed by Facebook. Identify the same image even after some modifications."
-authors = ["Caleb Moore <cmoore@darwinium.com>"]
-
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# Original Credits
+#authors = ["Caleb Moore <cmoore@darwinium.com>"]
 
 [dependencies]
-image = "^0.23.14"
+image = "0.25"
 
 [dev-dependencies]
 hex = "0.4"
 criterion = "0.3"
+
+[profile.release]
+opt-level = 3
+debug = true
+lto = false
 
 [[bench]]
 name = "pdq_benchmark"
